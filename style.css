@@ -1,0 +1,225 @@
+:root {
+    --clr-primary-red: hsl(0, 78%, 62%);
+    --clr-primary-orange: hsl(34, 97%, 64%);
+    --clr-primary-cyan: hsl(180, 62%, 55%);
+    --clr-primary-blue: hsl(212, 86%, 64%);
+
+
+    --clr-neutral-dark: hsl(234, 12%, 34%);
+    --clr-neutral-medium: hsl(229, 6%, 66%);
+    --clr-neutral-light: hsl(0, 0%, 98%);
+
+    --ff-primary: 'Poppins', Arial, sans-serif;
+
+    --fw-light: 200;
+    --fw-regular: 400;
+    --fw-dark: 600;
+
+    --fs-small: 0.8125rem;
+    --fs-normal: 1rem;
+    --fs-medium: 1.25rem;
+    --fs-large: 1.5rem;
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-light);
+    font-size: var(--fs-normal);
+    color: var(--clr-neutral-medium);
+    background-color: var(--clr-neutral-light);
+}
+
+.header {
+    text-align: center;
+    margin-block: 4.7rem;
+    margin-inline: 2rem;
+}
+
+.header__title {
+    font-weight: var(--fw-light);
+    color: var(--clr-neutral-dark);
+    font-size: var(--fs-large);
+    line-height: 1.4;
+    margin-block-end: 0.875rem;
+}
+
+.header__desc {
+    font-size: var(--fs-small);
+    font-weight: var(--fw-regular);
+}
+
+.header__title span {
+    font-weight: var(--fw-dark);
+}
+
+main {
+    margin-inline: 2rem;
+    display: grid;
+    gap: 2rem;
+    margin-block-end: 2rem;
+}
+
+.card {
+    padding: 1.75rem;
+    border-top: 0.3125rem solid;
+    border-radius: 0.3125rem;
+    box-shadow: 0 1rem 1rem 0 rgba(81, 81, 92, 0.247);    
+}
+
+.card__title {
+    font-size: var(--fs-medium);
+    margin-block-end: 0.3rem;
+    color: var(--clr-neutral-dark);
+}
+
+.card__desc {
+    font-size: var(--fs-small);
+    font-weight: var(--fw-regular);
+    line-height: 1.7;
+}
+.card__img {
+    margin-block-start: 2.25rem;
+    margin-left: auto;
+}
+
+.card--border-cyan {
+    border-color: var(--clr-primary-cyan);
+}
+
+.card--border-red {
+    border-color: var(--clr-primary-red)
+}
+
+.card--border-orange {
+    border-color: var(--clr-primary-orange)
+}
+.card--border-blue {
+    border-color: var(--clr-primary-blue)
+}
+
+@media (min-width: 60rem) {
+    .header {
+        max-width: 26.5rem;
+        margin-inline: auto;
+    }
+
+    .header__title {
+        font-size: 2rem;
+    }
+
+    main {
+        margin-inline: auto;
+        max-width: 68.75rem;
+        grid-auto-columns: 1fr;
+        grid-template-areas: 
+            '... two ...'
+            'one two four'
+            'one three four'
+            '... three ...';
+    }
+
+    main > :nth-child(1) {
+        grid-area: one;
+    }
+    main > :nth-child(2) {
+        grid-area: two;
+    }
+    main > :nth-child(3) {
+        grid-area: three;
+    }
+    main > :nth-child(4) {
+        grid-area: four;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
