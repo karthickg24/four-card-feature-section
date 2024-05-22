@@ -135,14 +135,14 @@ body {
     font-weight: var(--fw-dark);
 }
 
-main {
+.cards {
     margin-inline: 2rem;
     display: grid;
     gap: 2rem;
     margin-block-end: 2rem;
 }
 
-.card {
+.cards__card {
     padding: 1.75rem;
     border-top: 0.3125rem solid;
     border-radius: 0.3125rem;
@@ -190,7 +190,7 @@ main {
         font-size: 2rem;
     }
 
-    main {
+    .cards {
         margin-inline: auto;
         max-width: 68.75rem;
         grid-auto-columns: 1fr;
@@ -201,16 +201,18 @@ main {
             '... three ...';
     }
 
-    main > :nth-child(1) {
+    .card--border-cyan {
         grid-area: one;
     }
-    main > :nth-child(2) {
+    
+    .card--border-red {
         grid-area: two;
     }
-    main > :nth-child(3) {
+    
+    .card--border-orange {
         grid-area: three;
     }
-    main > :nth-child(4) {
+    .card--border-blue {
         grid-area: four;
     }
 }
